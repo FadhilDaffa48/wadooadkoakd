@@ -46,6 +46,5 @@ Di kasus gridworld ini saya menggunakan DQN karena PPO sebenernya agak ribet bua
 
 Q(s,a)=r+γ * argmax​Q(s′,a′)
 
-dimana r adalah reward, y adalah semacam bobot dan argmax itu buat nyari nilai a yang menghasilkan fungsi Q maksimal, dan selisih antara Q dan rumus di atas adalah error
-pas melatih network menggunakan huberloss, tidak saya tulis karena tidak bisa, intinya buat cari tau seberapa salah sih prediksi nilai Qnya
+dimana r adalah reward, y adalah semacam bobot dan argmax itu buat nyari nilai a yang menghasilkan fungsi Q maksimal, dan selisih antara Q dan rumus di atas adalah error. pas melatih network menggunakan huberloss, tidak saya tulis karena tidak bisa, intinya buat cari tau seberapa salah sih prediksi nilai Qnya
 nah disini kemaren saya modif dikit kode pytorch karena lingkarannya agak tolol, jadinya saya otak atik sedikit di perhitungan Q valuenya dimana nanti reward akan dikurangi oleh 0.01 * jumlah step yang diambil, hal ini dikarenakan dengan penambahan restriksi seperti itu dia belajarnya jadi lebih terkontrol, kemudian saya modif pada saat bagian perhitungan pergi kemananya menjadi semacam double DQN gitu, jadi intinya dia kayak ngecek array policy net bagusnya ke arah mana, lalu melalui data di target net dia akan menilai apakah benar itu yang terbaik, jadinya mesin tidak asal asalan geraknya dan jadi lebih cepat belajarnya
